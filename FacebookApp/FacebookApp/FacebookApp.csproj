@@ -55,6 +55,13 @@
     <Compile Include="BreaksManagerByMinutes.cs" />
     <Compile Include="BreaksManagerByDays.cs" />
     <Compile Include="BreaksManagerFactory.cs" />
+    <Compile Include="CommandButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommandButton.Designer.cs">
+      <DependentUpon>CommandButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadCommand.cs" />
     <Compile Include="IBreaksManager.cs" />
     <Compile Include="FileSystem.cs">
       <SubType>UserControl</SubType>
@@ -77,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CommandButton.resx">
+      <DependentUpon>CommandButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FileSystem.resx">
       <DependentUpon>FileSystem.cs</DependentUpon>
     </EmbeddedResource>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FacebookApp
 {
-    internal interface ICommand
+    public interface ICommand
     {
         void Execute();
     }

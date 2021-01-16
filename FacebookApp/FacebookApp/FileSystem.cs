@@ -11,8 +11,9 @@ namespace FacebookApp
 
         public FileSystem()
         {
-            InitializeComponent();
+            
             r_HomeFolder = new Folder { Text = "Albums Home" };
+            InitializeComponent();
             treeViewFiles.Nodes.Add(r_HomeFolder);
         }
 
@@ -57,15 +58,7 @@ namespace FacebookApp
 
         private void buttonDownload_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog { Description = "Custom Description" };
-
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                string selectedPath = fbd.SelectedPath;
-                r_HomeFolder.DownloadMe(selectedPath);
-            }
-
-            MessageBox.Show("Download completed");
+           
         }
 
         private void treeViewFiles_AfterSelect(object sender, TreeViewEventArgs e)
