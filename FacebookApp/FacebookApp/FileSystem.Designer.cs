@@ -38,8 +38,11 @@
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.buttonDownload = new CommandButton(new DownloadCommand(r_HomeFolder));
             this.labelCreateAlbumHeader = new System.Windows.Forms.Label();
-            this.buttonCreateAlbum = new System.Windows.Forms.Button();
             this.textBoxSelectedFriend = new System.Windows.Forms.TextBox();
+            this.textBoxSelectedFriend.Name = "textBoxSelectedFriend";
+            this.buttonCreateAlbum =
+                new CommandButton(new CreateAlbumCommand(r_HomeFolder, AlbumCreator, textBoxSelectedFriend));
+           
             this.labelSelectedFriend = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             createdTimeLabel = new System.Windows.Forms.Label();
@@ -127,13 +130,12 @@
             this.buttonCreateAlbum.TabIndex = 9;
             this.buttonCreateAlbum.Text = "Create";
             this.buttonCreateAlbum.UseVisualStyleBackColor = true;
-            this.buttonCreateAlbum.Click += new System.EventHandler(this.buttonCreateAlbum_Click);
             // 
             // textBoxSelectedFriend
             // 
             this.textBoxSelectedFriend.Location = new System.Drawing.Point(216, 48);
             this.textBoxSelectedFriend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxSelectedFriend.Name = "textBoxSelectedFriend";
+            
             this.textBoxSelectedFriend.Size = new System.Drawing.Size(100, 22);
             this.textBoxSelectedFriend.TabIndex = 8;
             // 

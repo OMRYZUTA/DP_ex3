@@ -9,27 +9,15 @@ namespace FacebookApp
 
         private readonly Folder r_HomeFolder;
 
-        public FileSystem()
+        public FileSystem(AlbumCreator i_AlbumCreator)
         {
-            
             r_HomeFolder = new Folder { Text = "Albums Home" };
+            AlbumCreator = i_AlbumCreator;
             InitializeComponent();
             treeViewFiles.Nodes.Add(r_HomeFolder);
         }
 
-        private void buttonCreateAlbum_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Folder newAlbum = AlbumCreator.GetAlbumWith(textBoxSelectedFriend.Text);
-                r_HomeFolder.Nodes.Add(newAlbum);
-                treeViewFiles.SelectedNode = r_HomeFolder;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+     
 
         private void treeViewFiles_AfterCheck(object sender, TreeViewEventArgs e)
         {
@@ -54,11 +42,6 @@ namespace FacebookApp
                     CheckAllChildNodes(node, nodeChecked);
                 }
             }
-        }
-
-        private void buttonDownload_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void treeViewFiles_AfterSelect(object sender, TreeViewEventArgs e)

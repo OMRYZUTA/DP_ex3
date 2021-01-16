@@ -68,7 +68,7 @@
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.photosListBox = new System.Windows.Forms.ListBox();
             this.createAlbumFeature = new System.Windows.Forms.TabPage();
-            this.fileSystem1 = new FacebookApp.FileSystem();
+            this.fileSystem1 = new FacebookApp.FileSystem(r_AlbumCreator);
             this.breakManagerFeature = new System.Windows.Forms.TabPage();
             this.pleaseNoteTopic = new System.Windows.Forms.Label();
             this.limitationsNoteToClient = new System.Windows.Forms.Label();
