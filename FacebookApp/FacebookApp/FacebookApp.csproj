@@ -73,6 +73,7 @@
     <Compile Include="Folder.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="IFile.cs" />
+    <Compile Include="ISortStrategy.cs" />
     <Compile Include="PhotoAdapter.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="eTab.cs" />
