@@ -1,35 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 namespace FacebookApp
 {
-    public partial class CommandButton : Button
+    class CommandButton : Button
     {
         public ICommand m_Command { get; set; }
 
-        public CommandButton(ICommand command)
+        public CommandButton()
         {
-            m_Command = command;
-            InitializeComponent();
-            Click += CommandButton_Click;
         }
 
         private void CommandButton_Click(object sender, EventArgs e)
         {
-            Selected();
-        }
-
-        public CommandButton(IContainer container, ICommand command)
-        {
-            m_Command = command;
-            container.Add(this);
-
-            InitializeComponent();
+            if(m_Command != null)
+            {
+                Selected();
+            }
         }
 
         public void Selected()
@@ -37,4 +28,5 @@ namespace FacebookApp
             m_Command.Execute();
         }
     }
+
 }

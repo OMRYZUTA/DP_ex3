@@ -36,7 +36,6 @@
             this.folderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBoxCreateAlbum = new System.Windows.Forms.PictureBox();
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.buttonDownload = new CommandButton(new DownloadCommand(r_HomeFolder));
             this.labelCreateAlbumHeader = new System.Windows.Forms.Label();
             this.buttonCreateAlbum = new System.Windows.Forms.Button();
             this.textBoxSelectedFriend = new System.Windows.Forms.TextBox();
@@ -100,15 +99,6 @@
             this.createdTimeDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.createdTimeDateTimePicker.TabIndex = 6;
             // 
-            // buttonDownload
-            // 
-            this.buttonDownload.Location = new System.Drawing.Point(320, 308);
-            this.buttonDownload.Name = "buttonDownload";
-            this.buttonDownload.Size = new System.Drawing.Size(164, 23);
-            this.buttonDownload.TabIndex = 11;
-            this.buttonDownload.Text = "Download Selected";
-            this.buttonDownload.UseVisualStyleBackColor = true;
-            // 
             // labelCreateAlbumHeader
             // 
             this.labelCreateAlbumHeader.AutoSize = true;
@@ -154,7 +144,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonDownload);
             this.Controls.Add(this.labelCreateAlbumHeader);
             this.Controls.Add(this.buttonCreateAlbum);
             this.Controls.Add(this.textBoxSelectedFriend);
