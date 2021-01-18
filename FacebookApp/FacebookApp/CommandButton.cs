@@ -13,6 +13,7 @@ namespace FacebookApp
 
         public CommandButton()
         {
+            Click += CommandButton_Click;
         }
 
         private void CommandButton_Click(object sender, EventArgs e)

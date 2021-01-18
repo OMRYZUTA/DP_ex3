@@ -38,12 +38,10 @@
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.labelCreateAlbumHeader = new System.Windows.Forms.Label();
             this.textBoxSelectedFriend = new System.Windows.Forms.TextBox();
-            this.textBoxSelectedFriend.Name = "textBoxSelectedFriend";
-            this.buttonCreateAlbum =
-                new CommandButton(new CreateAlbumCommand(r_HomeFolder, AlbumCreator, textBoxSelectedFriend));
-           
             this.labelSelectedFriend = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.commandButtonCreateAlbum = new FacebookApp.CommandButton();
+            this.commandButtonDownloadAll = new FacebookApp.CommandButton();
             createdTimeLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.folderBindingSource)).BeginInit();
@@ -111,23 +109,14 @@
             this.labelCreateAlbumHeader.TabIndex = 10;
             this.labelCreateAlbumHeader.Text = "Create an album with a friend!";
             // 
-            // buttonCreateAlbum
-            // 
-            this.buttonCreateAlbum.Location = new System.Drawing.Point(348, 48);
-            this.buttonCreateAlbum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCreateAlbum.Name = "buttonCreateAlbum";
-            this.buttonCreateAlbum.Size = new System.Drawing.Size(75, 23);
-            this.buttonCreateAlbum.TabIndex = 9;
-            this.buttonCreateAlbum.Text = "Create";
-            this.buttonCreateAlbum.UseVisualStyleBackColor = true;
-            // 
             // textBoxSelectedFriend
             // 
             this.textBoxSelectedFriend.Location = new System.Drawing.Point(216, 48);
             this.textBoxSelectedFriend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            
+            this.textBoxSelectedFriend.Name = "textBoxSelectedFriend";
             this.textBoxSelectedFriend.Size = new System.Drawing.Size(100, 22);
             this.textBoxSelectedFriend.TabIndex = 8;
+            this.textBoxSelectedFriend.TextChanged += new System.EventHandler(this.textBoxSelectedFriend_TextChanged);
             // 
             // labelSelectedFriend
             // 
@@ -142,12 +131,33 @@
             // 
             this.bindingSource1.DataSource = typeof(FacebookApp.PhotoAdapter);
             // 
+            // commandButtonCreateAlbum
+            // 
+            this.commandButtonCreateAlbum.Location = new System.Drawing.Point(348, 48);
+            this.commandButtonCreateAlbum.m_Command = null;
+            this.commandButtonCreateAlbum.Name = "commandButtonCreateAlbum";
+            this.commandButtonCreateAlbum.Size = new System.Drawing.Size(139, 23);
+            this.commandButtonCreateAlbum.TabIndex = 11;
+            this.commandButtonCreateAlbum.Text = "Create Album";
+            this.commandButtonCreateAlbum.UseVisualStyleBackColor = true;
+            // 
+            // commandButtonDownloadAll
+            // 
+            this.commandButtonDownloadAll.Location = new System.Drawing.Point(348, 310);
+            this.commandButtonDownloadAll.m_Command = null;
+            this.commandButtonDownloadAll.Name = "commandButtonDownloadAll";
+            this.commandButtonDownloadAll.Size = new System.Drawing.Size(132, 23);
+            this.commandButtonDownloadAll.TabIndex = 12;
+            this.commandButtonDownloadAll.Text = "Download All";
+            this.commandButtonDownloadAll.UseVisualStyleBackColor = true;
+            // 
             // FileSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.commandButtonDownloadAll);
+            this.Controls.Add(this.commandButtonCreateAlbum);
             this.Controls.Add(this.labelCreateAlbumHeader);
-            this.Controls.Add(this.buttonCreateAlbum);
             this.Controls.Add(this.textBoxSelectedFriend);
             this.Controls.Add(this.labelSelectedFriend);
             this.Controls.Add(createdTimeLabel);
@@ -177,5 +187,7 @@
         private System.Windows.Forms.TextBox textBoxSelectedFriend;
         private System.Windows.Forms.Label labelSelectedFriend;
         private System.Windows.Forms.TreeView treeViewFiles;
+        private CommandButton commandButtonCreateAlbum;
+        private CommandButton commandButtonDownloadAll;
     }
 }

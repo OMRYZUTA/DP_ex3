@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace FacebookApp
 {
-    class CreateAlbumCommand : ICommand
+    public class CreateAlbumCommand:ICommand
     {
         private Folder m_Folder;
         private AlbumCreator m_albumCreator;

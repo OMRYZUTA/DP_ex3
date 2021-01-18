@@ -5,9 +5,9 @@ using System.Text;
 
 namespace FacebookApp
 {
-    class DateStrategy:ISortStrategy
+    class DateStategy: ISortStrategy
     {
-        public void SortList<T>(T i_List)
+        public void SortPostsList<T>(T i_List)
         {
             throw new NotImplementedException();
         }

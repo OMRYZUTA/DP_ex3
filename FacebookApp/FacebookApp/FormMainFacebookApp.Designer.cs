@@ -37,6 +37,9 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabUserPosts = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonSortPosts = new System.Windows.Forms.Button();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.userPostsList = new System.Windows.Forms.ListBox();
             this.tabAboutUser = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -83,9 +86,7 @@
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.breakManagerTimer = new System.Windows.Forms.Timer(this.components);
             this.userNamePresentation = new System.Windows.Forms.Label();
-            this.comboBoxSort = new System.Windows.Forms.ComboBox();
-            this.buttonSortPosts = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.fileSystem = new FacebookApp.FileSystem();
             createdTimeLabel = new System.Windows.Forms.Label();
             nameLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.appIcon)).BeginInit();
@@ -100,6 +101,7 @@
             this.tabUserPhotos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoBindingSource)).BeginInit();
+            this.createAlbumFeature.SuspendLayout();
             this.breakManagerFeature.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputNumberFromUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coverPhoto)).BeginInit();
@@ -179,6 +181,35 @@
             this.tabUserPosts.TabIndex = 1;
             this.tabUserPosts.Text = "User Posts";
             this.tabUserPosts.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Sort posts by ";
+            // 
+            // buttonSortPosts
+            // 
+            this.buttonSortPosts.Location = new System.Drawing.Point(254, 22);
+            this.buttonSortPosts.Name = "buttonSortPosts";
+            this.buttonSortPosts.Size = new System.Drawing.Size(75, 23);
+            this.buttonSortPosts.TabIndex = 2;
+            this.buttonSortPosts.Text = "Sort";
+            this.buttonSortPosts.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxSort
+            // 
+            this.comboBoxSort.FormattingEnabled = true;
+            this.comboBoxSort.Items.AddRange(new object[] {
+            "Name",
+            "Date"});
+            this.comboBoxSort.Location = new System.Drawing.Point(108, 22);
+            this.comboBoxSort.Name = "comboBoxSort";
+            this.comboBoxSort.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxSort.TabIndex = 1;
             // 
             // userPostsList
             // 
@@ -496,6 +527,7 @@
             // 
             // createAlbumFeature
             // 
+            this.createAlbumFeature.Controls.Add(this.fileSystem);
             this.createAlbumFeature.Location = new System.Drawing.Point(4, 25);
             this.createAlbumFeature.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.createAlbumFeature.Name = "createAlbumFeature";
@@ -556,7 +588,7 @@
             "Hours",
             "Days"});
             this.minutesOrHours.Location = new System.Drawing.Point(152, 74);
-            this.minutesOrHours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minutesOrHours.Margin = new System.Windows.Forms.Padding(4);
             this.minutesOrHours.Name = "minutesOrHours";
             this.minutesOrHours.Size = new System.Drawing.Size(140, 24);
             this.minutesOrHours.TabIndex = 12;
@@ -565,7 +597,7 @@
             // inputNumberFromUser
             // 
             this.inputNumberFromUser.Location = new System.Drawing.Point(79, 75);
-            this.inputNumberFromUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputNumberFromUser.Margin = new System.Windows.Forms.Padding(4);
             this.inputNumberFromUser.Maximum = new decimal(new int[] {
             150,
             0,
@@ -599,7 +631,7 @@
             // 
             this.noBreaksCheckBox.AutoSize = true;
             this.noBreaksCheckBox.Location = new System.Drawing.Point(21, 129);
-            this.noBreaksCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.noBreaksCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.noBreaksCheckBox.Name = "noBreaksCheckBox";
             this.noBreaksCheckBox.Size = new System.Drawing.Size(96, 21);
             this.noBreaksCheckBox.TabIndex = 14;
@@ -686,34 +718,13 @@
             this.userNamePresentation.Size = new System.Drawing.Size(0, 31);
             this.userNamePresentation.TabIndex = 8;
             // 
-            // comboBoxSort
+            // fileSystem
             // 
-            this.comboBoxSort.FormattingEnabled = true;
-            this.comboBoxSort.Items.AddRange(new object[] {
-            "Name",
-            "Date"});
-            this.comboBoxSort.Location = new System.Drawing.Point(108, 22);
-            this.comboBoxSort.Name = "comboBoxSort";
-            this.comboBoxSort.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxSort.TabIndex = 1;
-            // 
-            // buttonSortPosts
-            // 
-            this.buttonSortPosts.Location = new System.Drawing.Point(254, 22);
-            this.buttonSortPosts.Name = "buttonSortPosts";
-            this.buttonSortPosts.Size = new System.Drawing.Size(75, 23);
-            this.buttonSortPosts.TabIndex = 2;
-            this.buttonSortPosts.Text = "Sort";
-            this.buttonSortPosts.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sort posts by ";
+            this.fileSystem.AlbumCreator = null;
+            this.fileSystem.Location = new System.Drawing.Point(-16, 4);
+            this.fileSystem.Name = "fileSystem";
+            this.fileSystem.Size = new System.Drawing.Size(706, 408);
+            this.fileSystem.TabIndex = 0;
             // 
             // FormMainFacebookApp
             // 
@@ -748,6 +759,7 @@
             this.tabUserPhotos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoBindingSource)).EndInit();
+            this.createAlbumFeature.ResumeLayout(false);
             this.breakManagerFeature.ResumeLayout(false);
             this.breakManagerFeature.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputNumberFromUser)).EndInit();
@@ -799,7 +811,6 @@
         private System.Windows.Forms.Label timerPresentation;
         private System.Windows.Forms.Label userNamePresentation;
         private System.Windows.Forms.Label saveSettingsNote;
-        private FileSystem fileSystem1;
         private System.Windows.Forms.BindingSource photoBindingSource;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.DateTimePicker createdTimeDateTimePicker;
@@ -813,5 +824,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSortPosts;
         private System.Windows.Forms.ComboBox comboBoxSort;
+        private FileSystem fileSystem;
     }
 }

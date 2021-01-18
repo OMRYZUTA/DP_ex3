@@ -7,6 +7,6 @@ namespace FacebookApp
 {
     interface ISortStrategy
     {
-        List<T> SortList<T>(List<T> i_List);
+        void SortPostsList<T>(T i_List);
     }
 }

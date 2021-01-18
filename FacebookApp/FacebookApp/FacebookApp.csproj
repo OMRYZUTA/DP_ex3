@@ -58,6 +58,8 @@
     <Compile Include="CommandButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CreateAlbumCommand.cs" />
+    <Compile Include="DateStrategy.cs" />
     <Compile Include="DownloadCommand.cs" />
     <Compile Include="IBreaksManager.cs" />
     <Compile Include="FileSystem.cs">
@@ -69,6 +71,8 @@
     <Compile Include="Folder.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="IFile.cs" />
+    <Compile Include="ISortStrategy.cs" />
+    <Compile Include="NameStrategy.cs" />
     <Compile Include="PhotoAdapter.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="eTab.cs" />

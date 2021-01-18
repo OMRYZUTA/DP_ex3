@@ -9,15 +9,12 @@ namespace FacebookApp
 
         private readonly Folder r_HomeFolder;
 
-        public FileSystem(AlbumCreator i_AlbumCreator)
+        public FileSystem()
         {
             r_HomeFolder = new Folder { Text = "Albums Home" };
-            AlbumCreator = i_AlbumCreator;
             InitializeComponent();
             treeViewFiles.Nodes.Add(r_HomeFolder);
         }
-
-     
 
         private void treeViewFiles_AfterCheck(object sender, TreeViewEventArgs e)
         {
@@ -59,6 +56,15 @@ namespace FacebookApp
             {
                 pictureBoxCreateAlbum.Image = Properties.Resources.folderIcon;
             }
+        }
+
+        private void textBoxSelectedFriend_TextChanged(object sender, EventArgs e)
+        {
+            commandButtonCreateAlbum.m_Command = new CreateAlbumCommand(
+                r_HomeFolder,
+                AlbumCreator,
+                textBoxSelectedFriend);
+            commandButtonDownloadAll.m_Command = new DownloadCommand(r_HomeFolder);
         }
     }
 }

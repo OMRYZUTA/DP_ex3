@@ -58,7 +58,7 @@ namespace FacebookApp
                     m_LoggedInUser = m_LoginResult.LoggedInUser;
                     r_TabsLoader.LoggedInUser = m_LoggedInUser;
                     breakManagerTimer.Start();
-                    fileSystem1.AlbumCreator = r_AlbumCreator;
+                    fileSystem.AlbumCreator = r_AlbumCreator;
                     fetchUserBasicInfo();
                 }
                 else
