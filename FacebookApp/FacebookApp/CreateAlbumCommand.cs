@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FacebookApp
 {
-    public class CreateAlbumCommand:ICommand
+    public class CreateAlbumCommand : ICommand
     {
-        private Folder m_Folder;
-        private AlbumCreator m_albumCreator;
-        private TextBox m_TextBoxSelectedFriend;
+        private readonly Folder m_Folder;
+        private readonly AlbumCreator m_AlbumCreator;
+        private readonly TextBox m_TextBoxSelectedFriend;
 
         public CreateAlbumCommand(Folder i_Folder, AlbumCreator i_AlbumCreator, TextBox i_TextBoxSelectedFriend)
         {
             m_Folder = i_Folder;
-            m_albumCreator = i_AlbumCreator;
+            m_AlbumCreator = i_AlbumCreator;
             m_TextBoxSelectedFriend = i_TextBoxSelectedFriend;
         }
 
@@ -23,7 +20,7 @@ namespace FacebookApp
         {
             try
             {
-                Folder newAlbum = m_albumCreator.GetAlbumWith(m_TextBoxSelectedFriend.Text);
+                Folder newAlbum = m_AlbumCreator.GetAlbumWith(m_TextBoxSelectedFriend.Text);
                 m_Folder.Nodes.Add(newAlbum);
             }
             catch (Exception ex)

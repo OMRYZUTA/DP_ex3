@@ -2,7 +2,7 @@
 {
     public class BreaksManagerByHours : IBreaksManager
     {
-        public int m_BreakTime { get; set; }
+        public int m_BreakTime { get; private set; }
 
         public int m_Seconds { get; set; }
 
@@ -10,12 +10,12 @@
 
         public void CreateBreaksManager(int i_BreakTimeInMinutes)
         {
-            InitBreakTime(i_BreakTimeInMinutes);
+            initBreakTime(i_BreakTimeInMinutes);
             InitMinutes();
             InitSeconds();
         }
 
-        public void InitBreakTime(int i_BreakTimeInMinutes)
+        private void initBreakTime(int i_BreakTimeInMinutes)
         {
             m_BreakTime = i_BreakTimeInMinutes * 60;
         }

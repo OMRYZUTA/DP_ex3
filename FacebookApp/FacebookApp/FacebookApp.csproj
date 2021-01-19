@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractListBoxSorter.cs" />
     <Compile Include="AlbumCreator.cs" />
     <Compile Include="BreaksManagerByHours.cs" />
     <Compile Include="BreaksManagerByMinutes.cs" />

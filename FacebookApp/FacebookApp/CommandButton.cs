@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FacebookApp
 {
-    class CommandButton : Button
+    public class CommandButton : Button
     {
         public ICommand m_Command { get; set; }
 
@@ -18,16 +14,15 @@ namespace FacebookApp
 
         private void CommandButton_Click(object sender, EventArgs e)
         {
-            if(m_Command != null)
+            if (m_Command != null)
             {
-                Selected();
+                selected();
             }
         }
 
-        public void Selected()
+        private void selected()
         {
             m_Command.Execute();
         }
     }
-
 }

@@ -45,8 +45,7 @@ namespace FacebookApp
 
         private void loadAlbumCreator(object i_ObjectToInit)
         {
-            AlbumCreator albumCreator = i_ObjectToInit as AlbumCreator;
-            if(albumCreator != null)
+            if (i_ObjectToInit is AlbumCreator albumCreator)
             {
                 albumCreator.LoggedInUser = LoggedInUser;
             }
@@ -68,16 +67,14 @@ namespace FacebookApp
 
         private void loadAboutUserTab(object i_ObjectsToInit)
         {
-            Dictionary<string, object> objectsToInit = i_ObjectsToInit as Dictionary<string, object>;
-
-            if(objectsToInit != null)
+            if (i_ObjectsToInit is Dictionary<string, object> objectsToInit)
             {
                 (objectsToInit["birthDayBox"] as TextBox).Text = LoggedInUser.Birthday;
                 try
                 {
                     (objectsToInit["genderBox"] as TextBox).Text = LoggedInUser.Gender.ToString();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                 }
 
@@ -133,11 +130,7 @@ namespace FacebookApp
             {
                 if (post.Message != null)
                 {
-                    userPostsList?.Items.Add(post.Message);
-                }
-                else if (post.Caption != null)
-                {
-                    userPostsList?.Items.Add(post.Caption);
+                    userPostsList?.Items.Add(post);
                 }
 
                 counter++;

@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using FacebookWrapper.ObjectModel;
 
 namespace FacebookApp
 {
-    class DateStategy: ISortStrategy
+    internal class DateStrategy : AbstractListBoxSorter
     {
-        public void SortPostsList<T>(T i_List)
+        protected override List<Post> SortBySpecificKey(List<Post> posts)
         {
-            throw new NotImplementedException();
+            return posts.OrderByDescending(
+                o => o.UpdateTime).ToList();
         }
     }
 }

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace FacebookApp
 {
     public class DownloadCommand : ICommand
     {
-        private Folder m_Folder;
+        private readonly Folder m_Folder;
 
         public DownloadCommand(Folder i_Folder)
         {
@@ -17,13 +13,13 @@ namespace FacebookApp
 
         public void Execute()
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog { Description = "Custom Description" };
+            FolderBrowserDialog fbd = new FolderBrowserDialog { Description = @"Custom Description" };
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string selectedPath = fbd.SelectedPath;
                 m_Folder.DownloadMe(selectedPath);
-                MessageBox.Show("Download completed");
+                MessageBox.Show(@"Download completed");
             }
         }
     }

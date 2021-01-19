@@ -12,14 +12,13 @@ namespace FacebookApp
         {
             Photo = i_Photo;
             Name = i_Photo.Name;
-            Selected = false;
         }
 
         public Photo Photo { get; }
 
-        public bool Selected { get; set; }
-
         private const string FileName = "Photo.jpg";
+
+        public bool Selected { get; set; }
 
         public void DownloadMe(string i_Path)
         {

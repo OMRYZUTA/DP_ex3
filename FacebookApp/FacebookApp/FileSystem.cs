@@ -43,8 +43,7 @@ namespace FacebookApp
 
         private void treeViewFiles_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            PhotoAdapter adapter = e.Node as PhotoAdapter;
-            if (adapter != null)
+            if (e.Node is PhotoAdapter adapter)
             {
                 pictureBoxCreateAlbum.LoadAsync(adapter.Photo.PictureNormalURL);
                 if(adapter.Photo.CreatedTime != null)

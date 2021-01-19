@@ -80,7 +80,7 @@ namespace FacebookApp
             }
             catch (Exception ex)
             {
-                newAlbum = new Folder { Text = string.Format("{0}'s Album", i_Friend.Name) };
+                newAlbum = new Folder { Text = string.Format(@"{0}'s Album", i_Friend.Name) };
                 for (int i = 0; i < 10; i++)
                 {
                     PhotoAdapter photo = new PhotoAdapter(LoggedInUser.PhotosTaggedIn[i]);

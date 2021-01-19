@@ -15,6 +15,7 @@ namespace FacebookApp
         private User m_LoggedInUser;
         private LoginResult m_LoginResult;
         private IBreaksManager m_BreakManager;
+        private ISortStrategy m_SortStrategy;
 
         public FormMainFacebookApp()
         {
@@ -241,7 +242,7 @@ namespace FacebookApp
         {
             breakManagerTimer.Stop();
             m_BreakManager.InitMinutes();
-            MessageBox.Show("Take a break!");
+            MessageBox.Show(@"Take a break!");
             breakManagerTimer.Start();
         }
 
@@ -274,7 +275,7 @@ namespace FacebookApp
                 seconds = m_BreakManager.m_Seconds.ToString();
             }
 
-            timerPresentation.Text = minutes + ":" + seconds;
+            timerPresentation.Text = minutes + @":" + seconds;
         }
 
         private void minutesOrHours_SelectionChangeCommitted(object sender, EventArgs e)
@@ -292,6 +293,24 @@ namespace FacebookApp
             {
                 inputNumberFromUser.Maximum = 3;
             }
+        }
+
+        private void comboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = comboBoxSort.SelectedItem.ToString();
+            if (selectedItem == "Alphabetical")
+            {
+               m_SortStrategy = new NameStrategy();
+            }
+            else if (selectedItem == "Date")
+            {
+                m_SortStrategy = new DateStrategy();
+            }
+        }
+
+        private void buttonSortPosts_Click(object sender, EventArgs e)
+        {
+            m_SortStrategy.SortPostsList(userPostsList);
         }
     }
 }

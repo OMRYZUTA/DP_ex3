@@ -71,6 +71,7 @@
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.photosListBox = new System.Windows.Forms.ListBox();
             this.createAlbumFeature = new System.Windows.Forms.TabPage();
+            this.fileSystem = new FacebookApp.FileSystem();
             this.breakManagerFeature = new System.Windows.Forms.TabPage();
             this.pleaseNoteTopic = new System.Windows.Forms.Label();
             this.limitationsNoteToClient = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.breakManagerTimer = new System.Windows.Forms.Timer(this.components);
             this.userNamePresentation = new System.Windows.Forms.Label();
-            this.fileSystem = new FacebookApp.FileSystem();
             createdTimeLabel = new System.Windows.Forms.Label();
             nameLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.appIcon)).BeginInit();
@@ -199,17 +199,20 @@
             this.buttonSortPosts.TabIndex = 2;
             this.buttonSortPosts.Text = "Sort";
             this.buttonSortPosts.UseVisualStyleBackColor = true;
+            this.buttonSortPosts.Click += new System.EventHandler(this.buttonSortPosts_Click);
             // 
             // comboBoxSort
             // 
+            this.comboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSort.FormattingEnabled = true;
             this.comboBoxSort.Items.AddRange(new object[] {
-            "Name",
+            "Alphabetical",
             "Date"});
             this.comboBoxSort.Location = new System.Drawing.Point(108, 22);
             this.comboBoxSort.Name = "comboBoxSort";
             this.comboBoxSort.Size = new System.Drawing.Size(121, 24);
             this.comboBoxSort.TabIndex = 1;
+            this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.comboBoxSort_SelectedIndexChanged);
             // 
             // userPostsList
             // 
@@ -537,6 +540,14 @@
             this.createAlbumFeature.Text = "Create Album";
             this.createAlbumFeature.UseVisualStyleBackColor = true;
             // 
+            // fileSystem
+            // 
+            this.fileSystem.AlbumCreator = null;
+            this.fileSystem.Location = new System.Drawing.Point(-16, 4);
+            this.fileSystem.Name = "fileSystem";
+            this.fileSystem.Size = new System.Drawing.Size(706, 408);
+            this.fileSystem.TabIndex = 0;
+            // 
             // breakManagerFeature
             // 
             this.breakManagerFeature.Controls.Add(this.pleaseNoteTopic);
@@ -717,14 +728,6 @@
             this.userNamePresentation.Name = "userNamePresentation";
             this.userNamePresentation.Size = new System.Drawing.Size(0, 31);
             this.userNamePresentation.TabIndex = 8;
-            // 
-            // fileSystem
-            // 
-            this.fileSystem.AlbumCreator = null;
-            this.fileSystem.Location = new System.Drawing.Point(-16, 4);
-            this.fileSystem.Name = "fileSystem";
-            this.fileSystem.Size = new System.Drawing.Size(706, 408);
-            this.fileSystem.TabIndex = 0;
             // 
             // FormMainFacebookApp
             // 
