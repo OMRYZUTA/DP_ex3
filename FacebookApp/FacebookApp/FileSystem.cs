@@ -46,7 +46,7 @@ namespace FacebookApp
             if (e.Node is PhotoAdapter adapter)
             {
                 pictureBoxCreateAlbum.LoadAsync(adapter.Photo.PictureNormalURL);
-                if(adapter.Photo.CreatedTime != null)
+                if (adapter.Photo.CreatedTime != null)
                 {
                     createdTimeDateTimePicker.Value = (DateTime)adapter.Photo.CreatedTime;
                 }
@@ -64,6 +64,7 @@ namespace FacebookApp
                 AlbumCreator,
                 textBoxSelectedFriend);
             commandButtonDownloadAll.m_Command = new DownloadCommand(r_HomeFolder);
+            commandButtonCreateAlbumPicture.m_Command = commandButtonCreateAlbum.m_Command;
         }
     }
 }

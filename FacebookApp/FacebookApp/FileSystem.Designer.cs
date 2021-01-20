@@ -33,19 +33,20 @@
             System.Windows.Forms.Label createdTimeLabel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeViewFiles = new System.Windows.Forms.TreeView();
-            this.folderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBoxCreateAlbum = new System.Windows.Forms.PictureBox();
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.labelCreateAlbumHeader = new System.Windows.Forms.Label();
             this.textBoxSelectedFriend = new System.Windows.Forms.TextBox();
             this.labelSelectedFriend = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.commandButtonCreateAlbum = new FacebookApp.CommandButton();
+            this.pictureBoxCreateAlbum = new System.Windows.Forms.PictureBox();
+            this.commandButtonCreateAlbumPicture = new FacebookApp.CommandButton();
             this.commandButtonDownloadAll = new FacebookApp.CommandButton();
+            this.commandButtonCreateAlbum = new FacebookApp.CommandButton();
+            this.folderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             createdTimeLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.folderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateAlbum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,21 +78,6 @@
             this.treeViewFiles.TabIndex = 3;
             this.treeViewFiles.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeViewFiles_AfterCheck);
             this.treeViewFiles.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewFiles_AfterSelect);
-            // 
-            // folderBindingSource
-            // 
-            this.folderBindingSource.DataSource = typeof(FacebookApp.Folder);
-            // 
-            // pictureBoxCreateAlbum
-            // 
-            this.pictureBoxCreateAlbum.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxCreateAlbum.Image = global::FacebookApp.Properties.Resources.folderIcon;
-            this.pictureBoxCreateAlbum.Location = new System.Drawing.Point(348, 120);
-            this.pictureBoxCreateAlbum.Name = "pictureBoxCreateAlbum";
-            this.pictureBoxCreateAlbum.Size = new System.Drawing.Size(246, 168);
-            this.pictureBoxCreateAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxCreateAlbum.TabIndex = 3;
-            this.pictureBoxCreateAlbum.TabStop = false;
             // 
             // createdTimeDateTimePicker
             // 
@@ -127,19 +113,26 @@
             this.labelSelectedFriend.TabIndex = 7;
             this.labelSelectedFriend.Text = "selected Friend:";
             // 
-            // bindingSource1
+            // pictureBoxCreateAlbum
             // 
-            this.bindingSource1.DataSource = typeof(FacebookApp.PhotoAdapter);
+            this.pictureBoxCreateAlbum.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxCreateAlbum.Image = global::FacebookApp.Properties.Resources.folderIcon;
+            this.pictureBoxCreateAlbum.Location = new System.Drawing.Point(348, 120);
+            this.pictureBoxCreateAlbum.Name = "pictureBoxCreateAlbum";
+            this.pictureBoxCreateAlbum.Size = new System.Drawing.Size(246, 168);
+            this.pictureBoxCreateAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCreateAlbum.TabIndex = 3;
+            this.pictureBoxCreateAlbum.TabStop = false;
             // 
-            // commandButtonCreateAlbum
+            // commandButtonCreateAlbumPicture
             // 
-            this.commandButtonCreateAlbum.Location = new System.Drawing.Point(348, 48);
-            this.commandButtonCreateAlbum.m_Command = null;
-            this.commandButtonCreateAlbum.Name = "commandButtonCreateAlbum";
-            this.commandButtonCreateAlbum.Size = new System.Drawing.Size(139, 23);
-            this.commandButtonCreateAlbum.TabIndex = 11;
-            this.commandButtonCreateAlbum.Text = "Create Album";
-            this.commandButtonCreateAlbum.UseVisualStyleBackColor = true;
+            this.commandButtonCreateAlbumPicture.Image = global::FacebookApp.Properties.Resources.addFolder;
+            this.commandButtonCreateAlbumPicture.Location = new System.Drawing.Point(90, 80);
+            this.commandButtonCreateAlbumPicture.m_Command = null;
+            this.commandButtonCreateAlbumPicture.Name = "commandButtonCreateAlbumPicture";
+            this.commandButtonCreateAlbumPicture.Size = new System.Drawing.Size(49, 43);
+            this.commandButtonCreateAlbumPicture.TabIndex = 13;
+            this.commandButtonCreateAlbumPicture.UseVisualStyleBackColor = true;
             // 
             // commandButtonDownloadAll
             // 
@@ -151,10 +144,29 @@
             this.commandButtonDownloadAll.Text = "Download All";
             this.commandButtonDownloadAll.UseVisualStyleBackColor = true;
             // 
+            // commandButtonCreateAlbum
+            // 
+            this.commandButtonCreateAlbum.Location = new System.Drawing.Point(348, 48);
+            this.commandButtonCreateAlbum.m_Command = null;
+            this.commandButtonCreateAlbum.Name = "commandButtonCreateAlbum";
+            this.commandButtonCreateAlbum.Size = new System.Drawing.Size(139, 23);
+            this.commandButtonCreateAlbum.TabIndex = 11;
+            this.commandButtonCreateAlbum.Text = "Create Album";
+            this.commandButtonCreateAlbum.UseVisualStyleBackColor = true;
+            // 
+            // folderBindingSource
+            // 
+            this.folderBindingSource.DataSource = typeof(FacebookApp.Folder);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(FacebookApp.PhotoAdapter);
+            // 
             // FileSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.commandButtonCreateAlbumPicture);
             this.Controls.Add(this.commandButtonDownloadAll);
             this.Controls.Add(this.commandButtonCreateAlbum);
             this.Controls.Add(this.labelCreateAlbumHeader);
@@ -167,8 +179,8 @@
             this.Name = "FileSystem";
             this.Size = new System.Drawing.Size(706, 408);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.folderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateAlbum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,5 +201,6 @@
         private System.Windows.Forms.TreeView treeViewFiles;
         private CommandButton commandButtonCreateAlbum;
         private CommandButton commandButtonDownloadAll;
+        private CommandButton commandButtonCreateAlbumPicture;
     }
 }
